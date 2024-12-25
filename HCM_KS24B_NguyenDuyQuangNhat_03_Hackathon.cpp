@@ -58,7 +58,8 @@ int main(){
                     if(min2>arr[i] && min2>min){
                         min2=arr[i];
                     }
-                } break;
+                } printf("\nphan tu nho thu 2 trong mang: %d",min2);
+                break;
             case 5:
                 printf("nhap vij tri can them vao mang: ");
                 scanf("%d", &position);
