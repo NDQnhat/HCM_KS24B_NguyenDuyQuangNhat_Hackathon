@@ -100,9 +100,10 @@ int main(){
                             arr[j+1]=temp;
                         }
                     }
-                }left=0,right=n-1,mid=left+(right-left)/2;
+                }left=0,right=n-1;
                 flag=1;
                 while(left>=right){
+                    mid=left+(right-left)/2;
                     if(arr[mid]==value){
                         printf("\nphan tu %d nam ow arr[%d]", value,mid);
                         flag=0;
