@@ -36,7 +36,7 @@ int main(){
                 for(int i=0;i<n;i++){
                     if(arr[i]>=2){
                         flag=1;
-                        for(int j=2;j<sqrt(arr[i]);j++){
+                        for(int j=2;j<=sqrt(arr[i]);j++){
                             if(arr[i]%j==0){
                                 flag=0;
                                 break;
@@ -55,7 +55,7 @@ int main(){
                     }
                 }min2=arr[0];
                 for(int i=0;i<n;i++){
-                    if(min2>arr[i] && min2>min){
+                    if(min2>arr[i] && arr[i]>min){
                         min2=arr[i];
                     }
                 } printf("\nphan tu nho thu 2 trong mang: %d",min2);
@@ -116,11 +116,12 @@ int main(){
                 }break;
             case 9:
                 for(int i=0;i<n-1;i++){      //neu ke cuoi khong trung voi cuoi thi cuoi cung khong trung?con duyet ca cuoi thi se trung khi vong j duyet den cuoi??
-                    for(int j=1;j<n;j++){
+                    for(int j=i+1;j<n;j++){
                         if(arr[i]==arr[j]){
-                            for(int k=j;k>n;k++){
-                                arr[j]=arr[j+1];
+                            for(int k=j;k>n-1;k++){
+                                arr[k]=arr[k+1];
                             }n--;
+                            j--;
                         }
                     }
                 }printf("\nmang chi gom cac phan tu doc nhat: ");
@@ -132,13 +133,11 @@ int main(){
                 for(int i=n-1;i>=0;i--){
                     array[index]=arr[i];
                     index++;
-                }index=0;
-                for(int i=0;i<n;i++){
-                    arr[i]=array[index];
-                    index++;
+                } for(int i=0;i<n;i++){
+                    arr[i]=array[i];
                 }printf("\nmang sau dao nguoc: ");
                 for(int i=0;i<n;i++){
-                    printf("%d ");
+                    printf("%d ", arr[i]);
                 }break;
             case 11:
                 printf("\nban da thoat chuong trinh");
